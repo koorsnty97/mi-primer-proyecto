@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matemúsica</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>matemúsica</h1>
+<canvas id="cv"></canvas>
+<div class="bar">
+  <button id="play" class="main">▶ Reproducir</button>
+  <button id="rew" title="Volver al inicio">⏮</button>
+</div>
+<div id="list"></div>
+<button id="add">+ Añadir función</button>
+<p class="help">Escribe y = f(x). El eje x es el tiempo y el eje y es el tono (y = 0 es la nota base; cada unidad sube los semitonos que indiques en Ajustes). Toca la gráfica para elegir desde dónde sonar.
+<br><b>Trigonometría:</b> sin, cos, tan, sec, csc, cot, asin, acos, atan, atan2(y,x), sinh, cosh, tanh, asinh, acosh, atanh, rad(grados), deg(radianes).
+<br><b>Ondas</b> (periodo 2π, como sin): square, saw, tri, pulse(x, ancho de 0 a 1), sinc, noise.
+<br><b>Potencias y logaritmos:</b> sqrt, cbrt, root(x,n), exp, exp2, expm1, pow, ln, log (base 10, o log(x,base)), log2, logb(x,b), log1p, hypot.
+<br><b>Redondeo y signo:</b> abs, floor, ceil, round(x,decimales), trunc, frac, sign, mod(a,b) y el operador %.
+<br><b>Combinatoria y números:</b> fact(n) o n!, gamma, ncr(n,k), npr(n,k), gcd, lcm, fib, isprime, erf.
+<br><b>Curvas útiles:</b> gauss, sigmoid, relu, heaviside, smoothstep(x,a,b), lerp(a,b,t), clamp(x,a,b), step(x,a), min, max, avg.
+<br><b>Lógica y selección:</b> pick(i, a, b, c…), if(cond, a, b), and, or, not, y comparaciones &lt; &gt; &lt;= &gt;= == !=.
+<br><b>Ayudas musicales:</b> semi(n) (semitonos → y), hz(frecuencia) (Hz → y).
+<br><b>Constantes:</b> pi, tau, e, phi, sqrt2, ln2, ln10, inf, rest (silencio). Trigonometría en grados: sind, cosd, tand.
+<br><b>Notación:</b> puedes escribir <code>f(x)=x²−4x+3</code>, <code>y = x^2 - 4x + 3</code> o <code>x2-4x+3</code> (la x seguida de un número se toma como potencia). También se aceptan 2x, √x, π, × y ÷.
+<br>Se pueden pegar nombres y variables: <code>xsin(3x)</code> es x·sin(3x), <code>sin3x</code> es sin(3x) y <code>cos2</code> es cos(2). Además, <code>e-0.2x</code> (pegado, sin espacios) se lee como e^(−0.2x); si quieres restar, escribe <code>e - 0.2x</code> con espacios.</p>
+<div class="chips" id="chips"></div>
+<details>
+  <summary>Ajustes</summary>
+  <div class="grid">
+    <label>Duración (s)<input id="dur" type="number" value="8" min="1" max="60" step="any"></label>
+    <label>Volumen<input id="vol" type="number" value="0.5" min="0" max="1" step="0.05"></label>
+    <label>x mín<input id="x0" type="number" value="0" step="any"></label>
+    <label>x máx<input id="x1" type="number" value="8" step="any"></label>
+    <label>y mín<input id="y0" type="number" value="-1.5" step="any"></label>
+    <label>y máx<input id="y1" type="number" value="1.5" step="any"></label>
+    <label>Nota base (MIDI, 60 = Do central)<input id="base" type="number" value="60" step="any"></label>
+    <label>Semitonos por unidad de y<input id="st" type="number" value="12" step="any"></label>
+    <label>Onda<select id="wave"><option value="triangle">Triángulo</option><option value="sine">Seno</option><option value="square">Cuadrada</option><option value="saw">Sierra</option></select></label>
+    <label class="chk"><input id="q" type="checkbox"> Ajustar al semitono</label>
+  </div>
+</details>
+
+<script src="script.js"></script>
+</body>
+</html>

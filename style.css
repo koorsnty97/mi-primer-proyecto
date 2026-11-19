@@ -1,0 +1,21 @@
+:root{--bg:#0f0d0c;--fg:#e8e4df;--mut:#8a847d;--line:#2a2623}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:16px;background:var(--bg);color:var(--fg);font:16px/1.4 system-ui,sans-serif}
+h1{font-size:1.2rem;font-weight:500;font-style:italic;text-align:center;color:var(--mut)}
+canvas{display:block;width:100%;aspect-ratio:16/10;background:#141110;border:1px solid var(--line);border-radius:12px;touch-action:none}
+.bar,.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+button{background:#1c1816;color:var(--fg);border:1px solid #3a3530;border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer}
+button.main{background:#ff7a59;border-color:#ff7a59;color:#1a0f0b;font-weight:600}
+.chips button{padding:6px 10px;font-size:.85rem}
+.fn{display:flex;align-items:center;gap:8px;margin:8px 0}
+.dot{width:14px;height:14px;border-radius:50%;flex:none}
+input,select{width:100%;min-width:0;background:#1c1816;color:var(--fg);border:1px solid #3a3530;border-radius:8px;padding:9px;font:inherit}
+.fn input{font-family:ui-monospace,monospace}
+.err{color:#ff8f8f;font-size:.8rem;margin:-4px 0 4px 22px}
+.help{font-size:.8rem;color:var(--mut)}
+details{margin-top:12px;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+summary{cursor:pointer;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+label{display:flex;flex-direction:column;gap:4px;font-size:.8rem;color:var(--mut)}
+label.chk{flex-direction:row;align-items:center;gap:8px}
+label.chk input{width:auto}
